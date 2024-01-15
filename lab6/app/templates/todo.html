@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}To do{% endblock %}
+{% from "render_field.html" import render_field %}
+{%block content%}
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-left h-100">
+        <div class="col col-lg-9 col-xl-7">
+            <div class="card rounded-3">
+                <div class="card-body p-4">
+
+                    <h4 class="text-center my-3 pb-3">Python Flask Simple To Do - SQLAlchemy</h4>
+                    <form method="post" action="{{url_for('add')}}" class="mb-5 text-center" novalidate>
+                        {{ form.csrf_token }}
+                        {{ render_field(form.todo) }}
+                        {{ render_field(form.description) }}
+                        {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
+                    </form>
+
+                    <table class="table mb-4">
+                        <thead>
+                        <tr>
+                            <th scope="col">Номер</th>
+                            <th scope="col">Предмет</th>
+                            <th scope="col">Опис</th>
+                            <th scope="col">Статус</th>
+                            <th scope="col">Дії</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for todo in todo_list %}
+                        <tr>
+                            <th scope="row">{{ todo.id }}</th>
+                            <td>{{ todo.title }}</td>
+                            <td>{{ todo.description }}</td>
+                            <td>
+                                {% if todo.complete == False %}
+                                <div class="alert alert-secondary" role="alert">В прогресі</div>
+                                {% else %}
+                                <div class="alert alert-success" role="alert">Виконано</div>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a class="btn btn-success" href="{{url_for('update', id=todo.id)}}">Оновити</a>
+                                <a class="btn btn-danger ms-1" href="{{url_for('delete', id=todo.id)}}">Видалити</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
