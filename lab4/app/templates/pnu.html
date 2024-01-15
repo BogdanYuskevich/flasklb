@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}ПНУ{% endblock %}
+{% block content %}
+    <h2 class="fs-1 mt-5 text-center">Software Engineering</h2>
+    <div class="row">
+        <div class="col-6">
+            <div class="bg-dark-subtle p-5 mt-5 mb-5">
+                <h3>ПНУ</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Fermentum iaculis eu non diam phasellus. Proin libero nunc consequat
+                    interdum varius sit. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Nec dui nunc
+                    mattis enim ut. Viverra aliquet eget sit amet tellus cras. Aliquam eleifend mi in nulla posuere
+                    sollicitudin aliquam ultrices. Non blandit massa enim nec dui nunc mattis enim ut. Orci ac auctor
+                    augue mauris augue neque gravida. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla.
+                    In iaculis nunc sed augue lacus viverra.
+            </p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-5 mt-5 mb-5">
+            <img src="{{ url_for('static', filename='images/pnu.png') }}" width="300" alt="foto">
+            </div>
+        </div>
+    </div>
+{% endblock %}
