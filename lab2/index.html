@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+</head>
+<body>
+    <h3>Затвердження дисциплін</h3>
+    <form action="./cgi-bin/form_handler.py" method="post">
+        Прізвище:
+        <br><input type="text" name="surname"><br>
+        Ім'я:
+        <br><input type="text" name="name"><br>
+        Група:
+        <br><input type="text" name="group"><br><br>
+        Завершили?<br>
+        <input type="radio" name="done" value="Так"> Так
+        <input type="radio" name="done" value="Ні"> Ні
+        <br><br>
+        Обрані дисципліни:
+        <br><input type="checkbox" name="Java"> Java
+        <br><input type="checkbox" name="Предмет 1"> Предмет 1
+        <br><input type="checkbox" name="Предмет 2"> Предмет 2
+        <br><input type="checkbox" name="Предмет 3"> Предмет 3
+        <br><input type="checkbox" name="Предмет 4"> Предмет 4
+        <br><br>
+        <button type="submit">Підтверити</button><br><br>
+    </form>
+    <form action="./cgi-bin/1.py" method="post">
+        <button type="submit">Видалити сookies</button>
+    </form>
+</body>
+</html>
